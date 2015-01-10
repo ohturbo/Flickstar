@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FlickStar</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+
+  <!-- Google font Raleway -->
+  <%= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Raleway' %>
+</head>
+<body>
+
+<%= render "layouts/header" %>
+
+<%= render "layouts/sidebar" %>
+<div class="content">
+	<%= yield %>
+</div>
+
+<%= render "layouts/footer" %>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+@import "colors";
+
+body {
+	font-family: Raleway;
+}
+
+a {
+	text-decoration: none;
+	color: $secondary-color;
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+}
+
+.content {
+	margin: auto;
+	width: 1000px;
+}
+
+header#page-header {
+	padding:5px; 
+	background-color: $primary-color; 
+	color: $secondary-color;
+	border-bottom: darken($primary-color, 20%) 2px solid;
+
+	h1 {
+		text-transform: uppercase;
+		text-align: center;
+	}
+}
+
+footer#page-footer {
+	text-align:center; 
+	padding:5px; 
+	background-color: $primary-color; 
+	color: $secondary-color;
+	border-top: darken($primary-color, 20%) 2px solid;
+}
+
+aside#side-bar {
+	margin-right:5%; 
+	height: 150px;
+	float: right;
+	padding:5px; 
+	background-color: $primary-color; 
+	color: $secondary-color;
+
+	ul { 
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+}

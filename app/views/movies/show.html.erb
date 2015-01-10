@@ -1,0 +1,18 @@
+<article class="movie-show">
+	<ul>
+		<span class="show-page-image"> <%= image_for(@movie) %> </span>
+		<li><h1><%= @movie.title %></h1></li>
+		<li><p><%= @movie.rating %></p></li>
+		<li><p><%= @movie.description %></p></li>
+		<li><p><%= format_total_gross(@movie) %></p></li>
+		<li><p>Released on <%= @movie.released_on %></p></li>
+		<li><p><strong>Cast: </strong> <%= @movie.cast %></p></li>
+		<li><p><strong>Director:</strong> <%= @movie.director %></p></li>
+		<li><p><strong>length: </strong><%= @movie.duration %></p></li>
+		<br>
+		<br>
+	</ul>
+</article>
+<%= link_to "Edit", edit_movie_path(@movie) %> |
+<%= link_to "Delete", movie_path(@movie), method: :delete, 
+		                    			  data: {confirm: "Are you sure?"} %>
