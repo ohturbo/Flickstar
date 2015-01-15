@@ -15,6 +15,12 @@ class Movie < ActiveRecord::Base
 
   validates :rating, inclusion: { in: RATINGS }
 
+  
+
+  has_many :reviews, dependent: :destroy 
+
+
+
   def flop?
     total_gross < 50000000.00
   end

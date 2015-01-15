@@ -13,7 +13,8 @@ describe "Deleting a movie from the database" do
     expect(current_path).to eq(movies_path)
     
     expect(page).to_not have_text("Really Bad Movie")
-        
+     
+    expect(page).to have_text("Movie successfully deleted!")
   end
   
 end

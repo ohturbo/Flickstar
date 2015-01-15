@@ -11,14 +11,17 @@
 </head>
 <body>
 
-<%= render "layouts/header" %>
+	<%= render "layouts/header" %>
 
-<%= render "layouts/sidebar" %>
-<div class="content">
-	<%= yield %>
-</div>
+	<%= render "layouts/sidebar" %>
 
-<%= render "layouts/footer" %>
+	<div class="content">
+	<%= render 'layouts/flashes' %>
+		<%= yield %>
+
+	</div>
+
+	<%= render "layouts/footer" %>
 
 </body>
 </html>

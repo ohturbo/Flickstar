@@ -1,0 +1,11 @@
+<h1>Reviews for <%= link_to @movie.title, movie_path(@movie) %></h1>
+
+<% @reviews.each do |review| %>
+	<div class="review">
+		<p><%= review.name %></p>
+		<p>Stars: <%= review.stars %></p>
+		<p><%= review.comment %></p>
+		<p><%= review.location %></p>
+		<br>
+	</div>
+<% end %>

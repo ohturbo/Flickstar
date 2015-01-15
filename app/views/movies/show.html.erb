@@ -9,6 +9,8 @@
 		<li><p><strong>Cast: </strong> <%= @movie.cast %></p></li>
 		<li><p><strong>Director:</strong> <%= @movie.director %></p></li>
 		<li><p><strong>length: </strong><%= @movie.duration %></p></li>
+		<li><p><%= link_to "#{@movie.reviews.count} Reviews", movie_reviews_path(@movie) %></p></li>
+		<li><p><%= link_to "Write Review", new_movie_review_path(@movie) %></p></li>
 		<br>
 		<br>
 	</ul>

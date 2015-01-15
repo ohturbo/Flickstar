@@ -2,7 +2,7 @@
 <% @movies.each do |movie| %>
 <article class="movie">
 		<header>
-			<p><%= image_for(movie) %></p>
+			<p><%= link_to image_for(movie), movie_path(movie) %></p>
 		</header>	
 	<ul>
 
@@ -14,6 +14,11 @@
 		<li><p><%= movie.released_on %></p></li>
 		<li><p><%= movie.cast %></p></li>
 		<li><p><%= movie.duration %></p></li>
+		<% if movie.reviews.count >= 1 %>
+			<li><p><%= link_to "#{movie.reviews.count} Reviews", movie_reviews_path(movie.id) %></p></li>
+			<% else %>
+			<li><p><%= link_to "Write the first review!", movie_reviews_path(movie.id) %></p></li>
+		<% end %>
 		</div>
 		<br>
 	</ul>

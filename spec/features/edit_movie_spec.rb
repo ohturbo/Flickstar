@@ -37,4 +37,22 @@ describe "Editing a movie" do
         
     expect(page).to have_text('error')
   end
+
+  it "has a flash message for updating a movie" do
+    movie = Movie.create(movie_attributes)
+
+    visit movie_url(movie)
+
+    click_link "Edit"
+
+    fill_in "Title", with: "Updated Movie Title"
+
+    click_button 'Update Movie'
+
+    expect(page).to have_text("Movie successfully updated!")
+
+    visit movie_url(movie)
+
+    expect(page).to_not have_text("Movie successfully updated!")
+  end
 end
