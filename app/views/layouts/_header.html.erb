@@ -1,5 +1,12 @@
 <header id="page-header">
-	<h1>
+	<div class="logo"><h1>
 		<%= link_to "FlickStar", movies_path%>
 	</h1>
+		<div class="navigation">
+			<ul>
+				<li><%=link_to "All Movies", movies_path %></li>
+				<li><%=link_to "Add New Movie", new_movie_path %></li>
+			</ul>
+		</div>
+	</div>
 </header>

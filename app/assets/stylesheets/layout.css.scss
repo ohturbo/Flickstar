@@ -2,6 +2,7 @@
 
 body {
 	font-family: Raleway;
+	margin: 0;
 }
 
 a {
@@ -24,19 +25,41 @@ header#page-header {
 	padding:5px; 
 	background-color: $primary-color; 
 	color: $secondary-color;
-	border-bottom: darken($primary-color, 20%) 2px solid;
+	border-bottom: $secondary-color 4px solid;
+	position: relative;
+
+	.logo {
+		width: 1000px;
+		margin: auto;
+	}
 
 	h1 {
+		margin-left: 0;
 		text-transform: uppercase;
-		text-align: center;
+		text-align: left;
 	}
 
 	a {
 		text-decoration: none;
 	}
+
+	.navigation {
+		width: 300px;
+		right: 0px;
+		bottom: 15px;
+		position: absolute;
+
+		li {
+			margin-right: 10px;
+			display: inline;
+		}
+	}
+
+
 }
 
 footer#page-footer {
+	margin-top: 70px;
 	text-align:center; 
 	padding:5px; 
 	background-color: $primary-color; 
@@ -45,6 +68,8 @@ footer#page-footer {
 }
 
 aside#side-bar {
+	margin-top: 1px;
+	border-bottom: darken($secondary-color, 20%) 4px solid;
 	margin-right:5%; 
 	height: 150px;
 	float: right;
