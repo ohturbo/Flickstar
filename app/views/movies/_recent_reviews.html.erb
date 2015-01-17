@@ -1,0 +1,9 @@
+<div class="review">
+	<h1>Recent Reviews:</h1>
+	<% @movie.recent_reviews.each do |review| %>
+	<p><%= review.name %></p>
+	<p><%= review.stars %></p>
+	<p><%= review.comment %></p>
+	<br>
+	<% end %>
+</div>

@@ -2,6 +2,9 @@
 	<ul>
 		<span class="show-page-image"> <%= image_for(@movie) %> </span>
 		<li><h1><%= @movie.title %></h1></li>
+
+		<li><p><%= format_average_stars(@movie) %></p></li>
+
 		<li><p><%= @movie.rating %></p></li>
 		<li><p><%= @movie.description %></p></li>
 		<li><p><%= format_total_gross(@movie) %></p></li>
@@ -13,8 +16,20 @@
 		<li><p><%= link_to "Write Review", new_movie_review_path(@movie) %></p></li>
 		<br>
 		<br>
+			<% if @movie.recent_reviews.any? %>
+				<% @movie.recent_reviews.each do |review| %>
+					<div class="review">
+						<ul>
+							<li><p> <%= review.name %></p></li>
+							<li><p> Stars: <%= review.stars %></p></li>
+							<li><p> <%= review.comment %></p></li>		
+						</ul>
+					</div>
+				<% end %>
+			<% end %>
+
 	</ul>
 </article>
-<%= link_to "Edit", edit_movie_path(@movie) %> |
-<%= link_to "Delete", movie_path(@movie), method: :delete, 
+<%= link_to "Edit Movie", edit_movie_path(@movie) %> |
+<%= link_to "Delete Movie", movie_path(@movie), method: :delete, 
 		                    			  data: {confirm: "Are you sure?"} %>

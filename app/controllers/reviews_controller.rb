@@ -18,6 +18,26 @@ class ReviewsController < ApplicationController
 		end
 	end
 
+	def destroy
+		@review = @movie.reviews.find(params[:id])
+		@review.destroy
+		redirect_to movie_reviews_path, notice: "Successfuly deleted"
+	end
+
+	def update
+		@review = @movie.reviews.find(params[:id])
+
+		if @review.update(review_params)
+			redirect_to movie_reviews_path, notice: "Succesfuly edited"
+		else
+			render :edit
+		end
+	end
+
+	def edit
+		@review = @movie.reviews.find(params[:id])
+	end
+
 
 	private
 
